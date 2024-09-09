@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartamento Turístico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .language-selector {
+            margin: 10px;
+            text-align: right;
+        }
+
+        .language-selector select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apartamento Turístico</h1>
+    </header>
+
+    <div class="language-selector">
+        <label for="language">Seleccionar idioma:</label>
+        <select id="language">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div id="content-es" class="content active">
+            <h2>Bienvenido a nuestro Apartamento Turístico</h2>
+            <p>Disfruta de una estancia inolvidable en nuestro cómodo y moderno apartamento situado en el corazón de la ciudad.</p>
+            <ul>
+                <li>2 habitaciones con camas dobles</li>
+                <li>Baño privado con ducha</li>
+                <li>Cocina totalmente equipada</li>
+                <li>Wi-Fi gratuito</li>
+                <li>Aire acondicionado</li>
+            </ul>
+            <p>¡Reserva ahora y vive una experiencia única!</p>
+        </div>
+
+        <div id="content-en" class="content">
+            <h2>Welcome to our Tourist Apartment</h2>
+            <p>Enjoy an unforgettable stay in our comfortable and modern apartment located in the heart of the city.</p>
+            <ul>
+                <li>2 bedrooms with double beds</li>
+                <li>Private bathroom with shower</li>
+                <li>Fully equipped kitchen</li>
+                <li>Free Wi-Fi</li>
+                <li>Air conditioning</li>
+            </ul>
+            <p>Book now and experience something unique!</p>
+        </div>
+
+        <div id="content-fr" class="content">
+            <h2>Bienvenue dans notre Appartement Touristique</h2>
+            <p>Profitez d'un séjour inoubliable dans notre appartement confortable et moderne situé au cœur de la ville.</p>
+            <ul>
+                <li>2 chambres avec lits doubles</li>
+                <li>Salle de bain privée avec douche</li>
+                <li>Cuisine entièrement équipée</li>
+                <li>Wi-Fi gratuit</li>
+                <li>Climatisation</li>
+            </ul>
+            <p>Réservez maintenant et vivez une expérience unique!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Apartamento Turístico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const languageSelector = document.getElementById('language');
+        const contentEs = document.getElementById('content-es');
+        const contentEn = document.getElementById('content-en');
+        const contentFr = document.getElementById('content-fr');
+
+        languageSelector.addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            contentEs.classList.remove('active');
+            contentEn.classList.remove('active');
+            contentFr.classList.remove('active');
+
+            if (selectedLanguage === 'es') {
+                contentEs.classList.add('active');
+            } else if (selectedLanguage === 'en') {
+                contentEn.classList.add('active');
+            } else if (selectedLanguage === 'fr') {
+                contentFr.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
